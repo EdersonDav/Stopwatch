@@ -110,15 +110,10 @@ button{
     background-color: #FF4500;
 
 }
-#reset{
+#reset,#lap,#pause,#return{
     display:none;
 }
-#lap{
-    display:none;
-}
-#pause{
-    display:none;
-}
-#return{
+
+#hr,#min{
     display:none;
 }
