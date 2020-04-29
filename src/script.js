@@ -17,29 +17,24 @@ let lbl_hr = document.querySelector("#hr")
 
 //Function mode nigth
 nigth.addEventListener('click', ()=> {
-    let body = document.querySelector("body")
-    let header = document.querySelector("header")
-    let section = document.querySelector("section")
-    let buttons = document.querySelectorAll("button")
+    var body = document.querySelector("body")
+    var header = document.querySelector("header")
+    var section = document.querySelector("section")
+    var buttons = document.querySelectorAll("button")
 
-    if(body.classList.contains("bodyLight")){
+    var current = 'Light', replaceable = 'Dark';
 
-        body.classList.replace("bodyLight","bodyDark")
-        header.classList.replace("headerLight","headerDark")
-        section.classList.replace("sectionLight","sectionDark")
+    if(body.classList.contains("bodyDark")){
+        current = 'Dark';
+        replaceable = 'Light';
+    }
 
-        for(let button of buttons){
-            button.classList.replace("buttonLight","buttonDark")
-        }
+    body.classList.replace("body"+current, "body"+replaceable)
+    header.classList.replace("header"+current,"header"+replaceable)
+    section.classList.replace("section"+current,"section"+replaceable)
 
-    }else{
-        body.classList.replace("bodyDark","bodyLight")
-        header.classList.replace("headerDark","headerLight")
-        section.classList.replace("sectionDark","sectionLight")
-
-        for(let button of buttons){
-            button.classList.replace("buttonDark","buttonLight")
-        }
+    for(let button of buttons){
+        button.classList.replace("button"+current,"button"+replaceable)
     }
 
 })
@@ -99,5 +94,6 @@ btn_start.addEventListener('click',()=>{HideButtons(); Run()})
 btn_pause.addEventListener('click',HideButtons)
 btn_return.addEventListener('click',HideButtons)
 btn_reset.addEventListener('click',RestartButtons)
+
 
 
