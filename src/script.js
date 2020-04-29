@@ -61,24 +61,19 @@ nigth.addEventListener('click', ()=> {
     var section = document.querySelector("section")
     var buttons = document.querySelectorAll("button")
 
-    if(body.classList.contains("bodyLight")){
+    var current = 'Light', replaceable = 'Dark';
 
-        body.classList.replace("bodyLight","bodyDark")
-        header.classList.replace("headerLight","headerDark")
-        section.classList.replace("sectionLight","sectionDark")
+    if(body.classList.contains("bodyDark")){
+        current = 'Dark';
+        replaceable = 'Light';
+    }
 
-        for(let button of buttons){
-            button.classList.replace("buttonLight","buttonDark")
-        }
+    body.classList.replace("body"+current, "body"+replaceable)
+    header.classList.replace("header"+current,"header"+replaceable)
+    section.classList.replace("section"+current,"section"+replaceable)
 
-    }else{
-        body.classList.replace("bodyDark","bodyLight")
-        header.classList.replace("headerDark","headerLight")
-        section.classList.replace("sectionDark","sectionLight")
-
-        for(let button of buttons){
-            button.classList.replace("buttonDark","buttonLight")
-        }
+    for(let button of buttons){
+        button.classList.replace("button"+current,"button"+replaceable)
     }
 
 })
