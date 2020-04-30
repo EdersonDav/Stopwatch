@@ -3,61 +3,65 @@
     src: url('fonts/DS-DIGI.TTF');
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    
-    
+
+
 }
-.bodyDark{
+
+.bodyDark {
     background-color: #2b2b2b
 }
-.bodyLight{
+
+.bodyLight {
     background-color: #dfdfdf
 }
 
-header{
+header {
     height: 50px;
     padding: 15px;
     margin-bottom: 20px;
 }
 
-.headerDark{
-    background-color:#FFA500;
+.headerDark {
+    background-color: #FFA500;
     color: #000;
 }
 
-.headerLight{
+.headerLight {
     background-color: aquamarine;
 }
 
-.imgs{
-    position:absolute;
+.imgs {
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-img{
-    height:50px;
+img {
+    height: 50px;
 }
 
-h1{
+h1 {
     float: left;
     margin-top: 5px;
 }
 
-#stopwatch:hover{
-    cursor: pointer;
-}
-#watch:hover{
-    cursor: pointer;
-}
-#night:hover{
+#stopwatch:hover {
     cursor: pointer;
 }
 
-section{
+#watch:hover {
+    cursor: pointer;
+}
+
+#night:hover {
+    cursor: pointer;
+}
+
+section {
     position: relative;
     text-align: center;
     height: 500px;
@@ -66,31 +70,34 @@ section{
     border-radius: 10px;
     box-sizing: border-box;
 }
-.sectionLight{
+
+.sectionLight {
     background-color: #fff;
 }
-.sectionDark{
+
+.sectionDark {
     background-color: #000;
     color: #FF8C00;
 }
-.container{
-    position:absolute;
+
+.container {
+    position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-#display{
+#display {
     font-size: 10em;
-    font-family: clock,sans-serif;
+    font-family: clock, sans-serif;
     margin: 50px;
 }
 
-#miliSec{
-    font-size:100px;
+#miliSec {
+    font-size: 100px;
 }
 
-button{
+button {
     width: 100px;
     height: 50px;
     margin-left: 10px;
@@ -100,20 +107,25 @@ button{
     font-size: 20px;
 }
 
-.buttonLight{
+.buttonLight {
     color: #000;
     background-color: aquamarine;
 }
 
-.buttonDark{
+.buttonDark {
     color: #fff;
     background-color: #FF4500;
 
 }
-#reset,#lap,#pause,#return{
-    display:none;
+
+#reset,
+#lap,
+#pause,
+#return {
+    display: none;
 }
 
-#hr,#min{
-    display:none;
+#hr,
+#min {
+    display: none;
 }
