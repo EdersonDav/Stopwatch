@@ -83,7 +83,24 @@ function RestartButtons() {
 //Call Functions
 btn_start.addEventListener('click', () => {
   HideButtons();
-  Run()
+  let contMili = 00
+  let contSec = 01
+  let contmin = 01
+
+  setInterval(() => {
+    if (contMili == 100) {
+      contMili = 0
+      lbl_sec.innerHTML = contSec++
+      if (contSec == 60) {
+        contSec = 1
+        lbl_min.style.display = "inline"
+        lbl_min.innerHTML = contmin++ + ":"
+      }
+    }
+    lbl_miliSec.innerHTML = contMili++
+  }, 0)
+
+
 })
 btn_pause.addEventListener('click', HideButtons)
 btn_return.addEventListener('click', HideButtons)
