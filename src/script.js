@@ -86,19 +86,27 @@ btn_start.addEventListener('click', () => {
   let contMili = 00
   let contSec = 01
   let contmin = 01
+  let conthora = 01
 
   setInterval(() => {
     if (contMili == 100) {
       contMili = 0
-      lbl_sec.innerHTML = contSec++
-      if (contSec == 60) {
-        contSec = 1
+      lbl_sec.innerHTML = contSec < 10 ? "0" + contSec++ : contSec++
+      if (contSec == 61) {
+        lbl_sec.innerHTML = "0" + 0
         lbl_min.style.display = "inline"
-        lbl_min.innerHTML = contmin++ + ":"
+        lbl_min.innerHTML = contmin < 10 ? "0" + contmin++ + ":" : contmin++ + ":"
+        contSec = 1
+        if (contmin == 61) {
+          lbl_min.innerHTML = "0:" + 0
+          lbl_hr.style.display = "inline"
+          lbl_hr.innerHTML = conthora < 10 ? "0" + conthora++ + ":" : conthora++ + ":"
+          contmin = 1
+        }
       }
     }
-    lbl_miliSec.innerHTML = contMili++
-  }, 0)
+    lbl_miliSec.innerHTML = "." + contMili++
+  }, 10)
 
 
 })

@@ -85,12 +85,18 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-areas:"c1"
+                      "c2";
 }
 
 #display {
   font-size: 10em;
   font-family: clock, sans-serif;
   margin: 50px;
+  display: grid;
+  grid-template-areas: "a1 a2 a3 a4";
+  align-items: flex-end;
 }
 
 #miliSec {
@@ -124,6 +130,11 @@ button {
 #return {
   display: none;
 }
+
+.a1{grid-area: a1;}
+.a2{grid-area: a2;}
+.a3{grid-area: a3;}
+.a4{grid-area: a4; max-width: 50px;}
 
 #hr,
 #min {
