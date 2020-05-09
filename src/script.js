@@ -15,6 +15,9 @@ let lbl_sec = document.querySelector("#sec")
 let lbl_min = document.querySelector("#min")
 let lbl_hr = document.querySelector("#hr")
 
+//Var for interval
+let interval;
+
 //Function mode nigth
 nigth.addEventListener('click', () => {
   let body = document.querySelector("body")
@@ -88,7 +91,7 @@ btn_start.addEventListener('click', () => {
   let contmin = 01
   let conthora = 01
 
-  setInterval(() => {
+  function count() {
     if (contMili == 100) {
       contMili = 0
       lbl_sec.innerHTML = contSec < 10 ? "0" + contSec++ : contSec++
@@ -106,10 +109,22 @@ btn_start.addEventListener('click', () => {
       }
     }
     lbl_miliSec.innerHTML = "." + contMili++
-  }, 10)
-
+  }
+  interval = setInterval(count, 10)
 
 })
-btn_pause.addEventListener('click', HideButtons)
-btn_return.addEventListener('click', HideButtons)
+
+btn_pause.addEventListener('click', () => {
+
+  HideButtons()
+
+  clearInterval(interval)
+
+})
+
+btn_return.addEventListener('click', () => {
+  HideButtons()
+
+})
+
 btn_reset.addEventListener('click', RestartButtons)
