@@ -86,8 +86,7 @@ section {
   top: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-areas:"c1"
-                      "c2";
+ 
 }
 
 #display {
@@ -139,4 +138,11 @@ button {
 #hr,
 #min {
   display: none;
+}
+
+.laps{
+  margin: 20px;
+  font-size: 2em;
+  font-family: clock, sans-serif;
+  position: absolute;
 }

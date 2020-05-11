@@ -83,13 +83,15 @@ function RestartButtons() {
 
 }
 
+let contMili = 00
+let contSec = 00
+let contmin = 00
+let conthora = 00
+
 //Call Functions
 btn_start.addEventListener('click', () => {
   HideButtons();
-  let contMili = 00
-  let contSec = 01
-  let contmin = 01
-  let conthora = 01
+
 
   function count() {
     if (contMili == 100) {
@@ -128,3 +130,12 @@ btn_return.addEventListener('click', () => {
 })
 
 btn_reset.addEventListener('click', RestartButtons)
+
+let contLap = 1
+
+btn_lap.addEventListener('click', () => {
+  let lapArea = document.querySelector('.laps')
+
+  lapArea.innerHTML += `<div>Lap ${contLap < 10 ? "0" + contLap : contLap} - ${conthora < 10 ? "0" + conthora : conthora}:${contmin < 10 ? "0" + contmin : contmin}:${contSec < 10 ? "0" + contSec : contSec}.<span style=" font-size: 0.5em">${contMili}</span></div>`
+  contLap++
+})
