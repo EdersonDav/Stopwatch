@@ -141,8 +141,27 @@ button {
 }
 
 .laps{
-  margin: 20px;
+  margin: 15px;
   font-size: 2em;
   font-family: clock, sans-serif;
   position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  max-height: 455px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+
+}
+.laps::-webkit-scrollbar {
+  width: 2px;
+}
+
+.lapsLight{
+  background-color: #DCDCDC;
+  box-shadow: 1px 1px 2px #2b2b2b;
+}
+
+.lapsDark{
+  background-color: #1C1C1C;
+  box-shadow: 1px 1px 2px #C0C0C0;
 }
