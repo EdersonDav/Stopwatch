@@ -9,7 +9,7 @@
   <title>Stopwatch</title>
 </head>
 
-<body class="bodyLight">
+<body class="bodyLight" onload="scroll()">
   <header class="headerLight">
 
     <h1 class="title">Stopwatch</h1>
@@ -52,6 +52,12 @@
   </section>
 
   <script src="src/script.js"></script>
+  <script>
+    function scroll() {
+      var objScrDiv = document.querySelector(".laps");
+      objScrDiv.scrollTop = objScrDiv.scrollHeight;
+    }
+  </script>
 </body>
 
 </html>

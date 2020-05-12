@@ -103,12 +103,12 @@ function initCount() {
         lbl_sec.innerHTML = "0" + 0
         lbl_min.style.display = "inline"
         lbl_min.innerHTML = contmin < 9 ? "0" + ++contmin + ":" : ++contmin + ":"
-        contSec = 1
+        contSec = 0
         if (contmin == 60) {
           lbl_min.innerHTML = "0:" + 0
           lbl_hr.style.display = "inline"
           lbl_hr.innerHTML = conthora < 9 ? "0" + ++conthora + ":" : ++conthora + ":"
-          contmin = 1
+          contmin = 0
         }
       }
     }
@@ -156,6 +156,8 @@ btn_reset.addEventListener('click', () => {
 })
 
 btn_lap.addEventListener('click', () => {
+  lapArea.style.display = 'block'
   lapArea.innerHTML += `<div>Lap ${contLap < 10 ? "0" + contLap : contLap} - ${conthora < 10 ? "0" + conthora : conthora}:${contmin < 10 ? "0" + contmin : contmin}:${contSec < 10 ? "0" + contSec : contSec}.<span style=" font-size: 0.5em">${contMili}</span></div>`
   contLap++
+  lapArea.scrollTop = lapArea.scrollHeight
 })

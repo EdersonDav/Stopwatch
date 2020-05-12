@@ -149,8 +149,7 @@ button {
   border-radius: 10px;
   max-height: 455px;
   overflow-y: scroll;
-  box-sizing: content-box;
-
+  display: none;
 }
 .laps::-webkit-scrollbar {
   width: 2px;
