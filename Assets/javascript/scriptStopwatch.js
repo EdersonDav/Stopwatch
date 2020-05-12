@@ -94,6 +94,7 @@ let conthora = 00
 //index laps
 let contLap = 1
 
+//Function start count
 function initCount() {
   function count() {
     if (contMili == 100) {
@@ -132,6 +133,15 @@ function clearAndResetCount() {
   contLap = 1
   lbl_min.style.display = "none"
   lbl_hr.style.display = "none"
+  lapArea.style.display = 'none'
+}
+
+//function laps
+function countLaps() {
+  lapArea.style.display = 'block'
+  lapArea.innerHTML += `<div>Lap ${contLap < 10 ? "0" + contLap : contLap} - ${conthora < 10 ? "0" + conthora : conthora}:${contmin < 10 ? "0" + contmin : contmin}:${contSec < 10 ? "0" + contSec : contSec}.<span style=" font-size: 0.5em">${contMili}</span></div>`
+  lapArea.scrollTop = lapArea.scrollHeight
+  contLap++
 }
 
 //Call Functions
@@ -156,8 +166,5 @@ btn_reset.addEventListener('click', () => {
 })
 
 btn_lap.addEventListener('click', () => {
-  lapArea.style.display = 'block'
-  lapArea.innerHTML += `<div>Lap ${contLap < 10 ? "0" + contLap : contLap} - ${conthora < 10 ? "0" + conthora : conthora}:${contmin < 10 ? "0" + contmin : contmin}:${contSec < 10 ? "0" + contSec : contSec}.<span style=" font-size: 0.5em">${contMili}</span></div>`
-  contLap++
-  lapArea.scrollTop = lapArea.scrollHeight
+  countLaps()
 })
