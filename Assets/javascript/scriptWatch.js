@@ -41,3 +41,50 @@ nigth.addEventListener('click', () => {
 
 })
 
+const newYork = {
+  timeZone: 'america/new_york',
+  hour: 'numeric',
+  minute: 'numeric'
+};
+const datenewYork = new Intl.DateTimeFormat([], newYork);
+console.log(datenewYork.format(new Date()));
+
+const Dubai = {
+  timeZone: 'Asia/Dubai',
+  hour: 'numeric',
+  minute: 'numeric'
+};
+const dateDubai = new Intl.DateTimeFormat([], Dubai);
+console.log(dateDubai.format(new Date()));
+
+const Tokyo = {
+  timeZone: 'Asia/Tokyo',
+  hour: 'numeric',
+  minute: 'numeric'
+};
+const dateTokyo = new Intl.DateTimeFormat([], Tokyo);
+console.log(dateTokyo.format(new Date()));
+
+const Vancouver = {
+  timeZone: 'America/Vancouver',
+  hour: 'numeric',
+  minute: 'numeric'
+};
+const dateVancouver = new Intl.DateTimeFormat([], Vancouver);
+console.log(dateVancouver.format(new Date()));
+
+const Brasilia = {
+  timeZone: 'America/Rio_Branco',
+  hour: 'numeric',
+  minute: 'numeric'
+};
+const dateBrasilia = new Intl.DateTimeFormat([], Brasilia);
+console.log(dateBrasilia.format(new Date()));
+
+let
+  Sao_Paulo = 'America/Sao_Paulo',
+  Rio_Branco = 'America/Rio_Branco',
+  Maceio = 'America/Maceio',
+  Manaus = 'America/Manaus',
+  Cuiaba = 'America/Cuiaba',
+  Rio_Janeiro = 'America/Sao_Paulo'
