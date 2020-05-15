@@ -5,6 +5,8 @@ let nigth = document.querySelector("#night")
 //Displays
 let lbl_time = document.querySelector("#time")
 
+let h2 = document.querySelector("h2")
+
 // dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 // monName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -83,15 +85,19 @@ const countriesAndTimes = [
   },
   brazil = {
     country: "Brazil",
-    city: "São Paulo",
+    city: "Rio de Janeiro",
     time: "America/Sao_Paulo"
   }
 ]
 
+let interval
+
 function Hours(i) {
 
-  setInterval(() => {
+  h2.innerHTML = `${countriesAndTimes[i].country} <br> ${countriesAndTimes[i].city}`
+  clearInterval(interval)
 
+  function count() {
     let country = {
       timeZone: countriesAndTimes[i].time,
       hour: 'numeric',
@@ -100,5 +106,7 @@ function Hours(i) {
     };
     let datecountry = new Intl.DateTimeFormat([], country);
     lbl_time.innerHTML = datecountry.format(new Date())
-  }, 10)
+  }
+  interval = setInterval(count, 10)
+
 }

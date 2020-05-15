@@ -10,7 +10,9 @@ body {
 }
 
 .bodyDark {
-  background-color: #2b2b2b
+  background-color: #0f2027;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .bodyLight {
@@ -24,12 +26,12 @@ header {
 }
 
 .headerDark {
-  background-color: #FFA500;
-  color: #000;
+  background-color: rgb(113, 89, 193);
+  color: rgb(11, 10, 13);
 }
 
 .headerLight {
-  background-color: aquamarine;
+  background-color: rgb(113, 89, 193);
 }
 
 .imgs {
@@ -74,8 +76,8 @@ section {
 }
 
 .sectionDark {
-  background-color: #000;
-  color: #FF8C00;
+  background-color: rgb(11, 10, 13);
+  color: rgb(113, 89, 193);;
 }
 
 .container {
@@ -111,13 +113,13 @@ button {
 }
 
 .buttonLight {
-  color: #000;
-  background-color: aquamarine;
+  color: rgb(11, 10, 13);
+  background-color: rgb(113, 89, 193);
 }
 
 .buttonDark {
   color: #fff;
-  background-color: #FF4500;
+  background-color: rgb(113, 89, 193);;
 
 }
 
@@ -159,6 +161,7 @@ button {
 }
 
 .lapsDark{
+  color: #fff;
   background-color: #1C1C1C;
-  box-shadow: 1px 1px 2px #FF4500;
+  box-shadow: 1px 1px 2px rgb(255, 255, 255);
 }

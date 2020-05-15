@@ -7,14 +7,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 .bodyDark {
-  background-color: #2b2b2b
+  background-image: url(../img/TokyoNight.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bodyLight {
-  background-color: #dfdfdf
+  background-image: url(../img/TokyoDay.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -59,6 +64,8 @@ h1 {
   cursor: pointer;
 }
 
+
+
 section {
   position: relative;
   text-align: center;
@@ -70,12 +77,20 @@ section {
 }
 
 .sectionLight {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.212);
 }
 
 .sectionDark {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.13);
   color: #FF8C00;
+}
+
+h2{
+  position: absolute;
+  margin-top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .container {
