@@ -5,27 +5,16 @@ let nigth = document.querySelector("#night")
 //Displays
 let lbl_time = document.querySelector("#time")
 
-dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-monName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+// dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+// monName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-
-function Hours() {
-  setInterval(() => {
-    let now = new Date
-    let hrs = now.getHours() < 10 ? "0" + now.getHours() : now.getHours()
-    let min = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes()
-    let sec = now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds()
-    //console.log(dayName[now.getDay()] + monName[now.getMonth()])
-    lbl_time.innerHTML = `${hrs}:${min}:${sec}`
-
-  }, 10)
-}
 
 //Function style dark
 nigth.addEventListener('click', () => {
   let body = document.querySelector("body")
   let header = document.querySelector("header")
   let section = document.querySelector("section")
+  let btns = document.querySelectorAll(".btn")
 
   let current = 'Light',
     replaceable = 'Dark';
@@ -39,52 +28,77 @@ nigth.addEventListener('click', () => {
   header.classList.replace("header" + current, "header" + replaceable)
   section.classList.replace("section" + current, "section" + replaceable)
 
+  for (let btn of btns) {
+    btn.classList.replace("btn" + current, "btn" + replaceable)
+  }
 })
 
-const newYork = {
-  timeZone: 'america/new_york',
-  hour: 'numeric',
-  minute: 'numeric'
-};
-const datenewYork = new Intl.DateTimeFormat([], newYork);
-console.log(datenewYork.format(new Date()));
 
-const Dubai = {
-  timeZone: 'Asia/Dubai',
-  hour: 'numeric',
-  minute: 'numeric'
-};
-const dateDubai = new Intl.DateTimeFormat([], Dubai);
-console.log(dateDubai.format(new Date()));
 
-const Tokyo = {
-  timeZone: 'Asia/Tokyo',
-  hour: 'numeric',
-  minute: 'numeric'
-};
-const dateTokyo = new Intl.DateTimeFormat([], Tokyo);
-console.log(dateTokyo.format(new Date()));
+const countriesAndTimes = [
+  france = {
+    country: "France",
+    city: "Paris",
+    time: "Europe/Paris"
+  },
+  united_States = {
+    country: "United States",
+    city: "Nova York",
+    time: "America/New_York"
+  },
+  spain = {
+    country: "Spain",
+    city: "Madrid",
+    time: "Europe/Madrid"
+  },
+  china = {
+    country: "China",
+    city: "Shanghai",
+    time: "Asia/Shanghai"
+  },
+  italy = {
+    country: "Italy",
+    city: "Rome",
+    time: "Europe/Rome"
+  },
+  germany = {
+    country: "Germany",
+    city: "Berlin",
+    time: "Europe/Berlin"
+  },
+  united_Kingdom = {
+    country: "United Kingdom",
+    city: "London",
+    time: "Europe/London"
+  },
+  russia = {
+    country: "Russia",
+    city: "Moscow",
+    time: "Europe/Moscow"
+  },
+  japan = {
+    country: "Japan",
+    city: "Tokyo",
+    time: "Asia/Tokyo"
+  },
+  brazil = {
+    country: "Brazil",
+    city: "São Paulo",
+    time: "America/Sao_Paulo"
+  }
+]
 
-const Vancouver = {
-  timeZone: 'America/Vancouver',
-  hour: 'numeric',
-  minute: 'numeric'
-};
-const dateVancouver = new Intl.DateTimeFormat([], Vancouver);
-console.log(dateVancouver.format(new Date()));
+function Hours(i) {
 
-const Brasilia = {
-  timeZone: 'America/Rio_Branco',
-  hour: 'numeric',
-  minute: 'numeric'
-};
-const dateBrasilia = new Intl.DateTimeFormat([], Brasilia);
-console.log(dateBrasilia.format(new Date()));
+  setInterval(() => {
 
-let
-  Sao_Paulo = 'America/Sao_Paulo',
-  Rio_Branco = 'America/Rio_Branco',
-  Maceio = 'America/Maceio',
-  Manaus = 'America/Manaus',
-  Cuiaba = 'America/Cuiaba',
-  Rio_Janeiro = 'America/Sao_Paulo'
+    let country = {
+      timeZone: countriesAndTimes[i].time,
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    };
+    let datecountry = new Intl.DateTimeFormat([], country);
+    lbl_time.innerHTML = datecountry.format(new Date())
+  }, 10)
+}

@@ -84,13 +84,44 @@ section {
   top: 50%;
   transform: translate(-50%, -50%);
   display: grid;
- 
+  width: 800px;
 }
 
 #display {
   font-size: 8em;
   font-family: clock, sans-serif;
   margin: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.country{
+  text-align: center;
   display: grid;
-  align-items: flex-end;
+  grid-template:auto auto/auto auto auto auto auto;
+}
+
+.btn{
+  width: 120px;
+  margin: 10px;
+  height: 25px;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnLight{
+  background-color: aquamarine;
+  box-shadow: 1px 1px 2px #2b2b2b;
+}
+
+.btnDark{
+  background-color: #2b2b2b;
+  box-shadow: 1px 1px 2px rgb(85, 85, 85) ;
+  color: #FF8C00;
+}
+
+
+.btn:hover{
+  box-shadow: none
 }
